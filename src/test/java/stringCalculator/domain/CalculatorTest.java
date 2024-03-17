@@ -49,15 +49,6 @@ public class CalculatorTest {
         //then
     }
 
-    @Test
-    @DisplayName("계산기의 숫자 2개중 한 개는 양수의 최대 범위, 다른 한 개는 음수의 최대 범위일때 뺄셈 하였을 경우의 최대 범위를 검증해야한다")
-    public void Calculator_Maximum_range_should_Be_Verified_When_Two_Numbers_Boundary() throws Exception{
-        //given
-
-        //when
-
-        //then
-    }
 
     @Test
     @DisplayName("계산기는 숫자 2개가 입력될때 곱셈이 가능하다.")
