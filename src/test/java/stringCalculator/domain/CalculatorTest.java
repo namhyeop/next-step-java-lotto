@@ -96,13 +96,17 @@ public class CalculatorTest {
     }
 
     @Test
-    @DisplayName("사칙연산 사이 빈 공백 문자열이 없을 경우 예외 발생")
-    public void Calculator_Should_Occur_Exception_When_Input_Empty_String () throws Exception{
+    @DisplayName("나눗셈의 경우 결과 값이 정수로 안 떨어지는 경우 예외 발생.")
+    public void Calculator_Should_Occur_Exception_When_Divide_Result_Is_Not_Value_Whole_Number() throws Exception{
         //given
+        Calculator sutCalculator = new Calculator();
 
         //when
+        ArithmeticException actual = catchThrowableOfType(
+            () -> sutCalculator.divide(5, 2), ArithmeticException.class);
 
         //then
+        assertThat(actual).hasMessageContaining(ErrorMessage.DIVIDE_VALUE_ERROR.getErrorMessage());
     }
 
     @ParameterizedTest
