@@ -57,10 +57,15 @@ public class CalculatorTest {
     @DisplayName("계산기에 숫자 2개가 뺄셈 되었을 때 최대 범위를 검증해야한다")
     public void Calculator_Maximum_range_should_Be_Verified_When_Two_Numbers_Are_Minus() throws Exception {
         //given
+        Calculator sutCalculator = new Calculator();
 
         //when
+        long sum1 = sutCalculator.minus(-1, Long.MAX_VALUE);
+        long sum2 = sutCalculator.minus(-2, Long.MAX_VALUE);
 
         //then
+        assertThat(sum1).isEqualTo( -9223372036854775808L);
+        assertThat(sum2).isEqualTo( 9223372036854775807L);
     }
 
 
