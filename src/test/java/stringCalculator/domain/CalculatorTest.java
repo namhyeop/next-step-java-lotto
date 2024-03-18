@@ -93,13 +93,16 @@ public class CalculatorTest {
     }
 
     @Test
-    @DisplayName("계산기는 숫자 2개가 입력될때 나눗셈이 가능하다.")
+    @DisplayName("계산기는 숫자 2개가 입력될때 나눗셈이 가능하다")
     public void Calculator_Should_Division() throws Exception{
         //given
+        Calculator sutCalculator = new Calculator();
 
         //when
+        long sum = sutCalculator.divide(5, 1);
 
         //then
+        assertThat(sum).isEqualTo( 5);
     }
 
     @Test
