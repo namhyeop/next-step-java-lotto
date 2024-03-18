@@ -105,24 +105,20 @@ public class CalculatorTest {
         //then
     }
 
-    @Test
-    @DisplayName("나눗셈의 경우 결과 값이 정수로 안 떨어지는 경우 예외 발생.")
-    public void Calculator_Should_Occur_Exception_When_Divide_Result_Is_Not_Value_Whole_Number() throws Exception{
+    @ParameterizedTest
+    @NullAndEmptySource
+    @ValueSource(strings = {"  "})
+    @DisplayName("빈 공백 문자일 경우 IllegalArgumentException throw 예외를 발생한다.")
+    public void Calculator_Should_Occur_Exception_When_Input_Is_Null_Or_Empty(String input) throws Exception{
         //given
+        Calculator sutCalculator = new Calculator();
 
         //when
+        IllegalArgumentException actual = catchThrowableOfType(
+            () -> sutCalculator.isValidInput(input), IllegalArgumentException.class);
 
         //then
-    }
-
-    @Test
-    @DisplayName("입력 값이 null이거나 빈 공백 문자일 경우 IllegalArgumentException throw 예외를 발생한다.")
-    public void Calculator_Should_Occur_Exception_When_Input_Is_Null_Or_Empty() throws Exception{
-        //given
-
-        //when
-
-        //then
+        assertThat(actual).hasMessageContaining(ErrorMessage.INPUT_VALUE_NOT_VALID.getErrorMessage());
     }
 
     @Test
