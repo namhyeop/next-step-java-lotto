@@ -120,14 +120,4 @@ public class CalculatorTest {
         //then
         assertThat(actual).hasMessageContaining(ErrorMessage.INPUT_VALUE_NOT_VALID.getErrorMessage());
     }
-
-    @Test
-    @DisplayName("입력 연산자가 사칙연산 기호가 아닌 경우 IllegalArgumentException throw 예외를 발생한다.")
-    public void Calculator_Should_Occur_Exception_When_Input_Is_Not_Four_Arithmetic_Operations() throws Exception{
-        //given
-
-        //when
-
-        //then
-    }
 }
