@@ -83,16 +83,6 @@ public class CalculatorTest {
     }
 
     @Test
-    @DisplayName("계산기의 숫자 2개를 곱했을때 표시할 수 있는 값의 범위로 넘었을 경우의 예외처리가 발생해야한다")
-    public void Calculator_Should_Occur_Exception_When_Multiply_Over_Maximum_Range() throws Exception{
-        //given
-
-        //when
-
-        //then
-    }
-
-    @Test
     @DisplayName("계산기는 숫자 2개가 입력될때 나눗셈이 가능하다")
     public void Calculator_Should_Division() throws Exception{
         //given
@@ -103,16 +93,6 @@ public class CalculatorTest {
 
         //then
         assertThat(sum).isEqualTo( 5);
-    }
-
-    @Test
-    @DisplayName("계산기의 숫자 2개가 덧셈 되었을 때 최대 범위가 넘어갔을 경우 예외 발생")
-    public void Calculator_Should_Occur_Exception_When_Add_Over_Maximum_Range() throws Exception{
-        //given
-
-        //when
-
-        //then
     }
 
     @Test
