@@ -28,21 +28,12 @@ public enum OperatorImpl implements Operator {
             }
             return leftOperand / rightOperand;
         }
-    }, test("#") {
-        @Override
-        public long calculate(long leftOperand, long rightOperand) {
-            return 0;
-        }
     };
 
     private final String operator;
 
     OperatorImpl(String operator) {
         this.operator = operator;
-    }
-
-    public String getOperator() {
-        return operator;
     }
 
     @Override
